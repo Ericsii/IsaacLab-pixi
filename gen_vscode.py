@@ -25,7 +25,7 @@ def overwrite_python_analysis_extra_paths(isaaclab_settings):
     isaacsim_extensions = os.listdir(os.path.join(ISAACSIM_DIR, "exts"))
     path_names.extend(
         [
-            '"${workspaceFolder}/.pixi/envs/default/lib/python3.10/site-packages/isaacsim/exts/'
+            '"${workspaceFolder}/.pixi/envs/default/lib/python3.1/site-packages/isaacsim/exts/'
             + ext
             + '"'
             for ext in isaacsim_extensions
@@ -37,22 +37,12 @@ def overwrite_python_analysis_extra_paths(isaaclab_settings):
     )
     path_names.extend(
         [
-            '"${workspaceFolder}/.pixi/envs/default/lib/python3.10/site-packages/isaacsim/extsDeprecated/'
+            '"${workspaceFolder}/.pixi/envs/default/lib/python3.1/site-packages/isaacsim/extsDeprecated/'
             + ext
             + '"'
             for ext in isaacsim_extensions_deprecated
         ]
     )
-
-    # isaacsim_extensions_physics = os.listdir(os.path.join(ISAACSIM_DIR, "extsPhysics"))
-    # path_names.extend(
-    #     [
-    #         '"${workspaceFolder}/.pixi/envs/default/lib/python3.10/site-packages/isaacsim/extsPhysics/'
-    #         + ext
-    #         + '"'
-    #         for ext in isaacsim_extensions_physics
-    #     ]
-    # )
 
     # add the path names that are in the Isaac Lab extensions directory
     isaaclab_extensions = os.listdir(os.path.join(ISAACLAB_DIR, "source"))
